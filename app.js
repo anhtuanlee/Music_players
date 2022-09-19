@@ -115,7 +115,8 @@ const app = {
             else {
                 _this.nextSong()
             }
-
+            _this.render()
+            _this.renderlistSong()
             _this.loadingSong()
             audio.play()
         }
@@ -127,6 +128,8 @@ const app = {
                 _this.prevSong()
 
             }
+            _this.render()
+            _this.renderlistSong()
             _this.loadingSong()
             audio.play()
         }
@@ -225,23 +228,22 @@ const app = {
         const _this = this
         AllList.forEach((playlist, index) => {
 
-
-
-
-       
             playlist.onclick = function (e) {
+
                 const songNode = e.target.closest('.playlist-song:not(.active)')
-                if (songNode.getAttribute('data-index') == _this.currentIndex) {
-                   
-                    songNode.classList.add('active')
-                }
 
 
                 if (e.target.closest('.btn-heart')) {
                     e.target.closest('.btn-heart').classList.toggle('active')
                 }
                 else if (songNode) {
+                    if (songNode.getAttribute('data-index') || Number(songNode.dataset.index) == _this.currentIndex) {
+                        // điều kiện nếu data-index = currentIndex thì sẽ thêm active vào chính songnode đó
+                        $('.playlist-song.active').classList.remove('active')
+                        songNode.classList.add('active')
 
+
+                    }
                     _this.currentIndex = songNode.getAttribute('data-index') || Number(songNode.dataset.index)
 
                     _this.loadingSong()
@@ -290,7 +292,7 @@ const app = {
         const htmls = this.songs.map((song, index) => {
 
             return `
-            <div data-index=${index} class="playlist-song" >
+            <div data-index=${index} class="playlist-song ${index == this.currentIndex ? 'active' : ''}" >
             <div class="playlist-img">
                 <img src="${song.img}" alt="" srcset="">
             </div>
