@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/fontawesome-free-6.1.2-web/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./artist/style.css">
+    <title>Artist</title>
+</head>
+
+<body>
+    <header>
+        <div class="menu-side">
+            <span id="logo">
+                <i class="fa-solid fa-music"></i>
+                SONG
+            </span>
+            <ul class="menu-nav">
+                <a href="/index.html" style="text-decoration: none;color:#000">
+                    <li class="item-nav">
+                        <h3>
+
+                            <i class="fa-solid fa-house"></i>
+                            Home
+                        </h3>
+
+                    </li>
+                </a>
+                <li class="item-nav" class="item-favorite">
+                    <h3>
+                        <i class="fa-solid fa-headset"></i>
+                        Favorite List
+                    </h3>
+                </li>
+                <li class="item-nav">
+                    <h3>
+                        <i class="fa-regular fa-images"></i>
+                        Album
+                    </h3>
+                </li>
+                <li class="item-nav active">
+                    <h3>
+                        <i class="fa-solid fa-user"></i>
+                        Artist
+                    </h3>
+                </li>
+                <li class="item-nav">
+                    <h3>
+                        <i class="fa-solid fa-video"></i>
+                        Videos
+                    </h3>
+                </li>
+            </ul>
+        </div>
+
+        <div class="song-side">
+            <!-- Song Nav -->
+            <div class="song-nav">
+                <input type="search" name="" id="search" placeholder="Search">
+                <i class="icon-search fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <div class="song-container">
+                <div id="music">
+
+                    <h2 style="text-align:center; font-size:20px;margin-top: 20px;">Now Playing</h2>
+                    <div class="music-ui">
+
+                        <div class="music-thumb">
+                            <img src="./artist/artist-denvau.jpg" alt="" class="img-thumb">
+                        </div>
+
+                        <h4 class="music-name">
+                            Chil cung den vau
+                        </h4>
+
+                        <h4 class="music-singer">
+                            Den vau
+                        </h4>
+
+
+
+                    </div>
+                </div>
+                <!-- Playlist -->
+                <div class="playlist">
+                    <div class="playlist-song">
+                        <img class="playlist-img" src="/artist/artist-denvau.jpg" alt="" srcset="">
+
+                        <div class="artist-content">
+                            <h4 class="artist-name">
+                                Dem tien ve cho me
+                            </h4>
+                            <span class="artist-singer">
+                                Den vau
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="playlist-song">
+                        <img class="playlist-img" src="/artist/artist-denvau.jpg" alt="" srcset="">
+
+                        <div class="artist-content">
+                            <h4 class="artist-name">
+                                Dem tien ve cho me
+                            </h4>
+                            <span class="artist-singer">
+                                Den vau
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div id="controls">
+            <div class="controls" style="gap: 0 60px">
+                <div class="controls-button">
+                    <div class="btn btn-repeat">
+                        <i class="fa-solid fa-arrow-rotate-right"></i>
+                    </div>
+
+                    <div class="btn btn-toggle-play">
+                        <div class="play">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                        <div class="pause">
+                            <i class="fa-solid fa-circle-pause"></i>
+                        </div>
+                    </div>
+
+                    <div class="btn btn-random">
+                        <i class="fa-solid fa-shuffle"></i>
+                    </div>
+                </div>
+                <!-- input range -->
+                <div class="control-range">
+                    <div class="input-range">
+                        <input type="range" step="1" min="0" max="100" id="range" class="range" value="0">
+                     
+                        <div class="btn-volumn">
+
+                            <div class="btn-vol-on">
+                                <i class="fa-solid fa-volume-off"></i>
+
+                            </div>
+                            <div class="btn-vol-off">
+                                <i class="fa-solid fa-volume-xmark"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <audio id="audio" src="./music/mp_demtienvechome.mp3"></audio>
+                <!-- timer -->
+                <div class="timer">
+                    <div class="duration">
+                        00:00
+                    </div>
+
+                    <div class="remainting">
+                        00:00
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    
+</progress>
+    </header>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="./artist/part.js"></script>
+</body>
+
+</html>

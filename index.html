@@ -4,167 +4,191 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="main.css">
-    <link rel="icon" href="data:;base64,=">
-
-    <link rel="stylesheet" href="./fontawesome-free-6.1.2-web/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mp3 Player</title>
+    <!-- slick framework -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="./fontawesome-free-6.1.2-web/css/all.min.css">
+    <title>Music Player</title>
 </head>
 
 <body>
-    <div id="music">
-        <div class="music-thumb">
-            <img src="img/img_demtienvechome.jpg" alt="" class="img-thumb">
+    <header>
+        <div class="menu-side">
+            <span id="logo">
+                <i class="fa-solid fa-music"></i>
+                SONG
+            </span>
+            <ul class="menu-nav">
+                <a href="http://127.0.0.1:5500/index.html">
+                    <li class="item-nav active">
+                        <h3>
+                            <i class="fa-solid fa-house"></i>
+                            Home
+                        </h3>
+                    </li>
+                </a>
+                <a href="#music">
+                    <li class="item-nav">
+                        <h3>
+                            <i class="fa-solid fa-headset"></i>
+                            List Song
+                        </h3>
+                    </li>
+                </a>
+                <li class="item-nav">
+                    <h3>
+                        <i class="fa-regular fa-images"></i>
+                        Album
+                    </h3>
+                </li>
+                <a href="#artist">
+                    <li class="item-nav">
+                        <h3>
+                            <i class="fa-solid fa-user"></i>
+                            Artist
+                        </h3>
+                    </li>
+                </a>
+                <li class="item-nav">
+                    <h3>
+                        <i class="fa-solid fa-video"></i>
+                        Videos
+                    </h3>
+                </li>
+            </ul>
+        </div>
+        <div class="song-side">
+            <!-- Song Nav -->
+            <div class="song-nav">
+                <input type="search" name="" id="search" placeholder="Search">
+                <i class="icon-search fa-solid fa-magnifying-glass"></i>
+            </div>
+            <!-- Song artist -->
+            <span>
+                <h2 style=" font-size:20px; padding-top: 60px ; margin-left: 30px; color : var(--color-white)">Top Artis
+                </h2>
+
+            </span>
+            <div class="song-artist" id="artist">
+                <div class="item-artist">
+                    <figure>
+                        <img src="img/img_demtienvechome.jpg" alt="" class="img-artist">
+                    </figure>
+
+                    <h4 class="artist-song">
+                        Đem tiền về cho mẹ
+                    </h4>
+                    <span class="artist-name">
+                        Đen Vâu
+                    </span>
+
+                </div>
+            </div>
+            <!-- Playlist -->
+            <div class="menu-song">
+
+                <div id="music">
+
+                    <h2 style="text-align:center; margin: 10px 0px; font-size:20px">Now Playing</h2>
+                    <div class="music-ui">
+
+                        <figure class="music-thumb">
+                            <img src="img/img_demtienvechome.jpg" alt="" class="img-thumb">
+                        </figure>
+
+                        <h4 class="music-name">
+                            Bai hat
+                        </h4>
+
+                        <h4 class="music-singer">
+                            Name
+                        </h4>
+                        <div class="input-range">
+                            <input type="range" step="1" min="0" max="100" id="range" class="range" value="0">
+
+                            <div class="btn-volumn">
+
+                                <div class="btn-vol-on">
+                                    <i class="fa-solid fa-volume-off"></i>
+
+                                </div>
+                                <div class="btn-vol-off">
+                                    <i class="fa-solid fa-volume-xmark"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <audio id="audio" src=""></audio>
+                        <div class="timer">
+                            <div class="duration">
+                                00:00
+                            </div>
+
+                            <div class="remainting">
+                                00:00
+                            </div>
+                        </div>
+
+                        <div class="controls">
+                            <div class="btn btn-repeat">
+                                <i class="fa-solid fa-arrow-rotate-right"></i>
+                            </div>
+                            <div class="btn btn-prev">
+                                <i class="fa-solid fa-backward"></i>
+                            </div>
+                            <div class="btn btn-toggle-play">
+                                <div class="play">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                                <div class="pause">
+                                    <i class="fa-solid fa-circle-pause"></i>
+                                </div>
+                            </div>
+                            <div class="btn btn-next">
+                                <i class="fa-solid fa-forward"></i>
+                            </div>
+                            <div class="btn btn-random">
+                                <i class="fa-solid fa-shuffle"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Playlist -->
+                    <div class=" btn btn-list-song">
+                        <i class="fa-solid fa-list-ul"></i>
+                    </div>
+
+                </div>
+
+                <div class="model-playlist-song">
+
+                    <div class="playlist-song">
+                        <div class="playlist-img">
+                            <img src="/img/img_demtienvechome.jpg" alt="" srcset="">
+                        </div>
+                        <div class="playlist-content">
+                            <h3>Dem tien ve cho me</h3>
+                            <p>Den vau</p>
+                        </div>
+                        <span class="time-duration">0:22</span>
+                        <div class="btn btn-heart">
+                            <i class="fa-solid fa-heart"></i>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <h3 class="music-name">
-            Bai hat
-        </h3>
 
-        <h4 class="music-singer">
-            Name
-        </h4>
+    </header>
 
-        <input type="range" step="1" min="0" max="100" id="range" class="range" value="0">
-        <audio id="audio" src=""></audio>
-        <div class="timer">
-            <div class="duration">
-                00:00
-            </div>
-
-            <div class="remainting">
-                00:00
-            </div>
-        </div>
-
-        <div class="controls">
-            <div class="btn btn-repeat">
-                <i class="fa-solid fa-arrow-rotate-right"></i>
-            </div>
-            <div class="btn btn-prev">
-                <i class="fa-solid fa-backward"></i>
-            </div>
-            <div class="btn btn-toggle-play">
-                <div class="play">
-                    <i class="fa-solid fa-play"></i>
-                </div>
-                <div class="pause">
-                    <i class="fa-solid fa-circle-pause"></i>
-                </div>
-            </div>
-            <div class="btn btn-next">
-                <i class="fa-solid fa-forward"></i>
-            </div>
-            <div class="btn btn-random">
-                <i class="fa-solid fa-shuffle"></i>
-            </div>
-        </div>
-
-        <!-- Playlist -->
-        <div class=" btn btn-list-song">
-            <i class="fa-solid fa-list-ul"></i>
-        </div>
-        <div class="model-playlist-song">
-
-            <div class="playlist-song">
-                <div class="playlist-img">
-                    <img src="/img/img_demtienvechome.jpg" alt="" srcset="">
-                </div>
-                <div class="playlist-content">
-                    <h3>Dem tien ve cho me</h3>
-                    <p>Den vau</p>
-                </div>
-                <div class="btn btn-heart">
-                    <i class="fa-solid fa-heart"></i>
-
-                </div>
-            </div>
-            <div class="playlist-song">
-                <div class="playlist-img">
-                    <img src="/img/img_demtienvechome.jpg" alt="" srcset="">
-                </div>
-                <div class="playlist-content">
-                    <h3>Dem tien ve cho me</h3>
-                    <p>Den vau</p>
-                </div>
-                <div class="btn btn-heart">
-                    <i class="fa-solid fa-heart"></i>
-
-                </div>
-            </div> 
-            <div class="playlist-song">
-                <div class="playlist-img">
-                    <img src="/img/img_demtienvechome.jpg" alt="" srcset="">
-                </div>
-                <div class="playlist-content">
-                    <h3>Dem tien ve cho me</h3>
-                    <p>Den vau</p>
-                </div>
-                <div class="btn btn-heart">
-                    <i class="fa-solid fa-heart"></i>
-
-                </div>
-            </div>
-            <div class="playlist-song">
-                <div class="playlist-img">
-                    <img src="/img/img_demtienvechome.jpg" alt="" srcset="">
-                </div>
-                <div class="playlist-content">
-                    <h3>Dem tien ve cho me</h3>
-                    <p>Den vau</p>
-                </div>
-                <div class="btn btn-heart">
-                    <i class="fa-solid fa-heart"></i>
-
-                </div>
-            </div>
-            <div class="playlist-song">
-                <div class="playlist-img">
-                    <img src="/img/img_demtienvechome.jpg" alt="" srcset="">
-                </div>
-                <div class="playlist-content">
-                    <h3>Dem tien ve cho me</h3>
-                    <p>Den vau</p>
-                </div>
-                <div class="btn btn-heart">
-                    <i class="fa-solid fa-heart"></i>
-
-                </div>
-            </div>
-            <div class="playlist-song">
-                <div class="playlist-img">
-                    <img src="/img/img_demtienvechome.jpg" alt="" srcset="">
-                </div>
-                <div class="playlist-content">
-                    <h3>Dem tien ve cho me</h3>
-                    <p>Den vau</p>
-                </div>
-                <div class="btn btn-heart">
-                    <i class="fa-solid fa-heart"></i>
-
-                </div>
-            </div>
-            <div class="playlist-song">
-                <div class="playlist-img">
-                    <img src="/img/img_demtienvechome.jpg" alt="" srcset="">
-                </div>
-                <div class="playlist-content">
-                    <h3>Dem tien ve cho me</h3>
-                    <p>Den vau</p>
-                </div>
-                <div class="btn btn-heart">
-                    <i class="fa-solid fa-heart"></i>
-
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <script src="app.js">
-
-    </script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>

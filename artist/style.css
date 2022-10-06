@@ -1,0 +1,83 @@
+header {
+    position: relative
+}
+
+header #music {
+    max-width: 500px;
+    height: 30rem;
+}
+.song-container {
+    display: flex;
+}
+.song-container .playlist {
+    flex:2
+}
+
+/* Thumb img */
+header .song-container .music-ui .music-thumb {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+}
+/* Controls */
+header .song-container .music-ui .music-thumb img {
+    border-radius: 10px;
+}
+#controls {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--player-background);
+    height: 100px;
+
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+
+}
+
+.controls .controls-button {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    font-size: 15px;
+}
+.controls .control-range {
+    width: 250px;
+    position: relative;
+    bottom: 30px;
+    z-index: 20;
+} 
+
+.controls .timer {
+    position: absolute;
+    bottom: -15px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    color: #999;
+    font-size: 14px;
+     width: 400px;
+}
+.controls .btn-volumn {
+    position: absolute;
+    top: 5px;
+    bottom: 0px;
+    right: 0px;
+    font-size: 20px;
+
+}
+.btn-toggle-play:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: scale(1.1);
+    border: 1px solid #fff;
+    border-radius: 100%;
+
+} 
