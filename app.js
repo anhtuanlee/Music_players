@@ -234,7 +234,7 @@ const app = {
             }
             _this.render()
             _this.renderlistSong()
-            _this.scollInterView() 
+            _this.scollInterView()
             _this.loadingSong()
             _this.renderDuration()
             audio.play()
@@ -451,11 +451,19 @@ const app = {
         I('.song-artist').innerHTML = htmls.join('')
     },
     slickSliderArtist: function () {
+        $('.item-artist').on('click', function (e) {
+            const index = $(this).attr("data-slick-index"); 
+            console.log(index)
+            localStorage.setItem('index', index)
+            location.href = 'http://127.0.0.1:5500/artist.html'
+
+        });
         $('.song-artist').slick(
             {
                 infinite: false,
                 slidesToShow: 4,
                 slidesToScroll: 2,
+
                 cssEase: 'linear',
                 arrow: true,
                 arrows: true,
@@ -473,7 +481,7 @@ const app = {
     },
     renderDuration: function () {
         //Xu li render() duration 
-         let htmls = this.songs.map((item,index) => {
+        let htmls = this.songs.map((item, index) => {
             let audioDuration = I(`#data-${index}`)
             let tagDuration = I(`.data-${index}`)
             // lay tung gia tri audio va tag dựa vào index ở render() và gọi lại thông qua i ở for 
@@ -489,34 +497,35 @@ const app = {
                 tagDuration.textContent = ` ${minutes} :  ${seconds}`
                 // in ra giá trị lấy từ audio
             }
-         })
-         console.log(htmls)
-
+        })
         playlistSong.innerHTML = htmls.join('')
     },
-    scollInterView: function() {
+    scollInterView: function () {
         I('.model-playlist-song .active').scrollIntoView(
             {
                 behavior: 'smooth',
                 block: 'center'
             }
         )
-        
+
     },
     start: function () {
         this.defineProperty()
-        this.loadingSong() 
+        this.loadingSong()
         this.render()
-        this.renderDuration() 
+        this.renderDuration()
         this.handleSong()
         this.renderlistSong()
         this.renderArtist()
         this.slickSliderArtist()
-        this.scollInterView()  
+        this.scollInterView()
 
     }
 
 }
-
-
 app.start()
+
+localStorage.setItem('data', JSON.stringify(app))
+
+
+

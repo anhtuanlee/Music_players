@@ -1,8 +1,9 @@
 const data = JSON.parse(localStorage.getItem('data')) // lay data tu app.js 
 const artistIndex = JSON.parse(localStorage.getItem('index')) // lay index tu slick slider  
-const arTist = data.allArtist
+const arTist = data.artist
 const songs = data.songs
 // du lieu tu localStorage
+console.log(artistIndex)
 const currentIndex = artistIndex
 
 const I = document.querySelector.bind(document)
@@ -22,6 +23,7 @@ const playlistSong = I('.playlist-song')
 const allDuration = II('.time-duration')
 const itemMenu = II('.menu-nav  li')
 const menuSong = I('.music')
+
 
 
 const playlists = songs.filter((song) => {
