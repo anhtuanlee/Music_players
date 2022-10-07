@@ -458,7 +458,7 @@ const app = {
             const index = $(this).attr("data-slick-index"); 
             console.log(index)
             localStorage.setItem('index', index)
-            location.href = './artist.html'
+            location.href = 'artist.html'
 
         });
         $('.song-artist').slick(
