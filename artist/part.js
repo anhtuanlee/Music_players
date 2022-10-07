@@ -55,7 +55,6 @@ function renderPlayList() {
    const playlists = songs.filter((song) => {
       return song.id_singer === artistIndex // tim ra nhung thang co id_singer dua vao index cua artist 
    })
-   console.log(playlists)
    // lấy những thằng thỏa điều kiện để render ra ngoài
    const htmls = playlists.map((item, index) => {
       return `
@@ -185,7 +184,7 @@ function handleSong() {
    // Xu li button Play pause 
 
    btnPlay.onclick = function () {
-      let cdThumb = I('.music-thumb') 
+      let cdThumb = I('.music-thumb')
       if (isPlaying) {
          audio.pause()
          cancelThumb.play()
@@ -253,17 +252,31 @@ function handleSong() {
    }
    // Xu li next
    btnNext.onclick = function (e) {
-      nextSong()
+      if (isRandom) {
+         ranDom()
+      }
+      else {
+         nextSong()
+      }
       playSong()
       renderPlayList()
+      renderlistSong()
+
       renderDuration()
 
    }
    // Xu li prev
    btnPrev.onclick = function (e) {
-      prevSong()
+      if (isRandom) {
+         ranDom()
+      }
+      else {
+         prevSong()
+      }
       playSong()
       renderPlayList()
+      renderlistSong()
+
       renderDuration()
    }
    // Xu li random 
@@ -276,7 +289,15 @@ function handleSong() {
       isRepeat = !isRepeat
       btnRepeat.classList.toggle('active')
    }
-
+   // Xu li ket thuc
+   audio.onended = function () {
+      if (isRepeat === true) {
+         audio.play()
+      }
+      else {
+         btnNext.click()
+      }
+   }
 
    // Xu li muted audio 
    I('.btn-volumn').onclick = function () {
@@ -323,15 +344,17 @@ function prevSong() {
    }
 }
 function ranDom() {
-   let index = songNode.getAttribute('data-index') || Number(songNode.dataset.index)
-
-   playlists[index] = Math.floor(Math.random() * playlists.length)
+   do {
+      index = Math.floor(Math.random() * playlists.length)
+   }
+   while (currentIndex === index)
+   currentIndex = index
 }
 
+handleSong()
 renderPlayList()
 renderlistSong()
 loadingSong()
 renderDuration()
-handleSong()
 
 
