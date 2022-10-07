@@ -339,8 +339,17 @@ const app = {
         })
 
 
-        // Xu li click vao playlist phat chinh bai hat do 
-
+       // XU li muted
+        I('.btn-volumn').onclick = function () {
+            I('.btn-vol-on').classList.toggle('muted')
+            if (I('.btn-vol-on')) {
+               audio.muted = false // Khi vol on audio mac dinh
+            }
+            I('.btn-vol-off').classList.toggle('muted')
+            if (I('.btn-vol-off.muted')) {
+               audio.muted = true  // Khi vol on audio muted
+            }
+         }
 
     },
 
