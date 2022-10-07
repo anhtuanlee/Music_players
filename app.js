@@ -434,6 +434,7 @@ const app = {
     renderArtist: function () {
         const htmls = this.artist.map((item) => {
             return `
+            
             <div class="item-artist">
             <figure>
                 <img src="./${item.img}" alt="" class="img-artist">
@@ -446,7 +447,9 @@ const app = {
                 ${item.singer} 
             </span>
 
-        </div>`
+        </div>
+           
+        `
         })
         I('.song-artist').innerHTML = htmls.join('')
     },
@@ -455,7 +458,7 @@ const app = {
             const index = $(this).attr("data-slick-index"); 
             console.log(index)
             localStorage.setItem('index', index)
-            location.href = 'http://127.0.0.1:5500/artist.html'
+            location.href = './artist.html'
 
         });
         $('.song-artist').slick(
