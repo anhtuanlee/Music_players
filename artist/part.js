@@ -108,7 +108,8 @@ function renderlistSong() {
             console.log(index)
             console.log(playlists[index])
             audio.src = playlists[index].path
-            audio.play()
+            audio.play() 
+            cdThumb.style.borderRadius = "100%"
          }
       }
    })
@@ -174,7 +175,7 @@ const app = {
       // Khi cancel ket thuc thi no se tra ve border = 10px
       function cancelFinish() {
          cancelThumb.onfinish = function (e) {
-            cdThumb.style.borderRadius = 10 + 'px' 
+            cdThumb.style.borderRadius = 10 + 'px'
          }
       }
 
@@ -186,7 +187,7 @@ const app = {
 
          if (_this.isPlaying) {
             audio.pause()
-            cancelThumb.play() 
+            cancelThumb.play()
          }
          else {
             audio.play()
@@ -295,3 +296,5 @@ renderlistSong()
 loadingSong()
 renderDuration()
 app.handleSong()
+
+

@@ -80,7 +80,7 @@ body {
     text-align: center;
     font-size: 20px;
     margin: 0 10px;
-    font-weight: 700; 
+    font-weight: 700;
 }
 
 .music-singer {
@@ -193,7 +193,8 @@ body {
     margin-top: -0px;
 
     /* Add cool effects to your sliders! */
-} 
+}
+
 .input-range {
     position: relative;
 }
@@ -218,7 +219,7 @@ body {
 }
 
 .btn-vol-on.muted {
-    display: none ;
+    display: none;
 }
 
 .btn-vol-off {
@@ -292,6 +293,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     padding: 10px;
+    color: var(--color-white);
 }
 
 .playlist-song.active {
