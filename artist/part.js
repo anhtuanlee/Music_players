@@ -24,8 +24,8 @@ const playlistSong = I('.playlist-song')
 const allDuration = II('.time-duration')
 const itemMenu = II('.menu-nav  li')
 const menuSong = I('.music')
-
-var playlists = songs.filter((song) => {
+const setIndex = new Set()
+let playlists = songs.filter((song) => {
    if (artistIndex >= 0) {
       return song.id_singer == artistIndex// tim ra nhung thang co id_singer dua vao index cua artist 
 
@@ -344,11 +344,21 @@ function prevSong() {
    }
 }
 function ranDom() {
+   setIndex.add(currentIndex) // them crIndex vao set  
+   console.log(setIndex)
+   let randomIndex
    do {
-      index = Math.floor(Math.random() * playlists.length)
+      randomIndex = Math.floor(Math.random() * playlists.length)
+
    }
-   while (currentIndex === index)
-   currentIndex = index
+   while (setIndex.has(randomIndex)) // Muốn vòng lặp chạy thì điều kiện phải false, mà khi setIndex.has(randomIndex) ==
+   // thì trong setIndex chưa có giá trị đó, cùng với trong Set() chỉ có được 1 phần tử duy nhất, nên nó sẽ thỏa điều kiện để thêm vào setIndex
+   currentIndex = randomIndex
+
+   if (setIndex.size == playlists.length - 1) {
+      // khi length cua setIndex full thi nó sẽ được đặt lại
+      setIndex.clear()
+   }
 }
 
 handleSong()

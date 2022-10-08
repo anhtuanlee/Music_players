@@ -17,6 +17,7 @@ const playlistModel = I('.model-playlist-song')
 const playlistSong = I('.playlist-song')
 const allListSong = document.querySelectorAll('.playlist-song')
 
+const setIndex = new Set()
 
 
 const app = {
@@ -339,17 +340,17 @@ const app = {
         })
 
 
-       // XU li muted
+        // XU li muted
         I('.btn-volumn').onclick = function () {
             I('.btn-vol-on').classList.toggle('muted')
             if (I('.btn-vol-on')) {
-               audio.muted = false // Khi vol on audio mac dinh
+                audio.muted = false // Khi vol on audio mac dinh
             }
             I('.btn-vol-off').classList.toggle('muted')
             if (I('.btn-vol-off.muted')) {
-               audio.muted = true  // Khi vol on audio muted
+                audio.muted = true  // Khi vol on audio muted
             }
-         }
+        }
 
     },
 
@@ -371,13 +372,21 @@ const app = {
         }
     },
     randomSong: function () {
+        setIndex.add(this.currentIndex) // them crIndex vao set  
+        console.log(setIndex)
         let randomIndex
         do {
             randomIndex = Math.floor(Math.random() * this.songs.length)
 
         }
-        while (this.currentIndex === randomIndex)
+        while (setIndex.has(randomIndex)) // Muốn vòng lặp chạy thì điều kiện phải false, mà khi setIndex.has(randomIndex) ==
+        // thì trong setIndex chưa có giá trị đó, cùng với trong Set() chỉ có được 1 phần tử duy nhất, nên nó sẽ thỏa điều kiện để thêm vào setIndex
         this.currentIndex = randomIndex
+
+        if (setIndex.size == this.songs.length - 1) {
+            // khi length cua setIndex full thi nó sẽ được đặt lại
+            setIndex.clear()
+        }
         this.loadingSong()
     },
     loadingSong: function () {
@@ -445,7 +454,7 @@ const app = {
             return `
             
             <div class="item-artist">
-            <figure>
+            <figure class="img-artist-box">
                 <img src="./${item.img}" alt="" class="img-artist">
             </figure>
 
@@ -464,7 +473,7 @@ const app = {
     },
     slickSliderArtist: function () {
         $('.item-artist').on('click', function (e) {
-            const index = $(this).attr("data-slick-index"); 
+            const index = $(this).attr("data-slick-index");
             console.log(index)
             localStorage.setItem('index', index)
             location.href = 'artist.html'
@@ -474,8 +483,7 @@ const app = {
             {
                 infinite: false,
                 slidesToShow: 4,
-                slidesToScroll: 2,
-
+                slidesToScroll: 2, 
                 cssEase: 'linear',
                 arrow: true,
                 arrows: true,

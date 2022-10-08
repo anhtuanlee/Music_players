@@ -251,7 +251,7 @@ body {
 .model-playlist-song {
     width: 50%;
     visibility: hidden;
-    opacity: 0;
+    opacity: 0.5;
     margin: 0px 50px -40px 0px;
     height: 500px;
     display: flex;
@@ -260,11 +260,15 @@ body {
     align-content: center;
     border-radius: 10px;
     overflow-y: scroll;
+    animation: loadModelPlaylistOff 1s;
 }
 
 .model-playlist-song.active {
     visibility: visible;
     opacity: 1;
+    animation: loadModelPlaylistOn 1s;
+    transition: 1s linear;
+ 
 }
 
 .model-playlist-song::-webkit-scrollbar {
@@ -294,11 +298,12 @@ body {
     cursor: pointer;
     padding: 10px;
     color: var(--color-white);
+    transition: 0.5s linear;
 }
 
 .playlist-song.active {
     background-color: var(--active-color-song);
-    transition: 0.3s linear;
+    animation: playlistSong 2s
 }
 
 .playlist-song.active h3 {
@@ -373,4 +378,34 @@ body {
 
 .timer {
     padding-top: 20px;
+}
+
+
+@keyframes loadModelPlaylistOn {
+    from {
+        transform: translateX(100px);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+}
+@keyframes loadModelPlaylistOff {
+    from {
+        transform: translateX(0px);
+    }
+
+    to {
+        transform: translateX(600px);
+    }
+}
+
+@keyframes playlistSong {
+    from {
+        opacity: 0.2;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
