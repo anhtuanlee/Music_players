@@ -17,7 +17,7 @@
     --active-color-song: hsla(0, 0%, 100%, 0.2);
     --hover-color-song: hsla(0, 0%, 100%, 0.6);
     --player-background: #170f23;
-
+    --ul-nav: #170f23ed 
 }
 
 body {
@@ -28,7 +28,7 @@ body {
 }
 
 #logo {
-    background: linear-gradient(to right, #170015 30%, rgb(243, 6, 29) 100%);
+    background: linear-gradient(to right, #1a00fc 30%, rgb(255 0 25) 100%);
     text-align: center;
     display: flex;
     align-items: center;
@@ -41,15 +41,14 @@ body {
 }
 
 #music {
-    margin-top: 10px;
-    width: 400px;
+    width: 500px;
     color: var(--color-white);
     margin-left: 20px;
     margin-right: auto;
     border-radius: 12px;
     background-color: var(--layout-bg);
     position: relative;
-
+    flex-grow: 0;
 }
 
 .music-thumb {
@@ -67,7 +66,7 @@ body {
     height: 100%;
     object-fit: cover;
     border-radius: 100%;
-
+    margin: 0 auto;
 }
 
 .music-thumb img:hover {
@@ -252,12 +251,10 @@ body {
     width: 50%;
     visibility: hidden;
     opacity: 0.5;
-    margin: 0px 50px -40px 0px;
-    height: 500px;
     display: flex;
+    height: 500px;
     flex-direction: column;
     align-items: center;
-    align-content: center;
     border-radius: 10px;
     overflow-y: scroll;
     animation: loadModelPlaylistOff 1s;
@@ -268,7 +265,8 @@ body {
     opacity: 1;
     animation: loadModelPlaylistOn 1s;
     transition: 1s linear;
- 
+    margin-right: 30px;
+    flex-shrink: 0;
 }
 
 .model-playlist-song::-webkit-scrollbar {
@@ -291,7 +289,7 @@ body {
     width: 95%;
     height: 60px;
     background-color: var(--layout-bg);
-    margin: 10px 10px 10px 10px;
+    margin: 0px 10px 20px 10px;
     display: flex;
     align-items: center;
     border-radius: 5px;
@@ -299,6 +297,10 @@ body {
     padding: 10px;
     color: var(--color-white);
     transition: 0.5s linear;
+}
+
+.playlist-song:last-child {
+    margin-bottom: 0;
 }
 
 .playlist-song.active {
@@ -383,13 +385,14 @@ body {
 
 @keyframes loadModelPlaylistOn {
     from {
-        transform: translateX(100px);
+        transform: translateX(600px);
     }
 
     to {
         transform: translateX(0px);
     }
 }
+
 @keyframes loadModelPlaylistOff {
     from {
         transform: translateX(0px);

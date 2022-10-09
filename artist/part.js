@@ -174,6 +174,7 @@ function handleSong() {
          iterations: 1
       }
    )
+   cancelThumb.pause()
    // Khi cancel ket thuc thi no se tra ve border = 10px
    function cancelFinish() {
       cancelThumb.onfinish = function (e) {
@@ -276,7 +277,6 @@ function handleSong() {
       playSong()
       renderPlayList()
       renderlistSong()
-
       renderDuration()
    }
    // Xu li random 

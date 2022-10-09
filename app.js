@@ -16,7 +16,9 @@ const btnListSong = I('.btn-list-song')
 const playlistModel = I('.model-playlist-song')
 const playlistSong = I('.playlist-song')
 const allListSong = document.querySelectorAll('.playlist-song')
-
+const btnListNav = I('.btn-list-nav')
+const menuNav = I('.menu-side')
+const closeMenu = I('.btn-close-menu')
 const setIndex = new Set()
 
 
@@ -311,35 +313,6 @@ const app = {
             btnListSong.classList.toggle('active')
             playlistModel.classList.toggle('active')
         }
-        // Xu li click playlist 
-
-
-        allListSong.forEach((song, index) => {
-
-
-            song.onclick = function (e) {
-
-                const songNode = e.target.closest(".playlist-song:not(.active)");
-
-                if (e.target.closest('.btn-heart')) {
-                    e.target.closest('.btn-heart').classList.toggle('active')
-
-                }
-                else if (songNode) {
-
-                    const dataIndex = songNode.getAttribute("data-index") || Number(songNode.dataset.index)
-
-                    _this.currentIndex = dataIndex
-
-                    _this.loadingSong()
-                    audio.play()
-
-                }
-
-            }
-        })
-
-
         // XU li muted
         I('.btn-volumn').onclick = function () {
             I('.btn-vol-on').classList.toggle('muted')
@@ -351,7 +324,32 @@ const app = {
                 audio.muted = true  // Khi vol on audio muted
             }
         }
+        // Xu li khi click vao item-nav 
+        II('.item-nav').forEach((item, index) => {
+            item.onclick = function () {
 
+                item.classList.add('active')
+                I('.item-nav.active').classList.remove('active')
+
+            }
+        })
+        // Xu li btn-list-nav 
+        btnListNav.onclick = function () {
+            menuNav.classList.add('active')
+            menuNav.classList.remove('close')
+
+        }
+        //Xu li khi click vao close off menu-nav
+        closeMenu.onclick = function () {
+            menuNav.classList.add('close')
+            menuNav.classList.remove('active')
+
+        }
+        // Xu li click vao body se close menu-nav 
+        I('.container').onclick = function (e) { 
+            menuNav.classList.remove('active')
+            menuNav.classList.add('close') 
+        }
     },
 
     nextSong: function () {
@@ -483,12 +481,43 @@ const app = {
             {
                 infinite: false,
                 slidesToShow: 4,
-                slidesToScroll: 2, 
+                slidesToScroll: 2,
                 cssEase: 'linear',
                 arrow: true,
                 arrows: true,
                 prevArrow: "<button type='button' class='slick-prev slick-button'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
-                nextArrow: "<button type='button' class='slick-next slick-button'><i class='fa fa-angle-right' aria-hidden='true'></i></button>"
+                nextArrow: "<button type='button' class='slick-next slick-button'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+                responsive: [
+                    {
+                        breakpoint: 1181,
+                        settings: {
+                            infinite: false,
+                            slidesToShow: 3,
+                            slidesToScroll: 2,
+                            cssEase: 'linear',
+                            arrows: true,
+                            draggable: true
+                        }
+                    },
+                    {
+                        breakpoint: 820,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                            arrow: false,
+                            cssEase: 'linear',
+                            draggable: true
+
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
             }
         )
     },

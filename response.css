@@ -1,0 +1,63 @@
+ /* Tablet */
+ @media only screen and (max-width: 64rem) {
+     header .menu-side {
+         width: 20%
+     }
+
+     header .song-side .song-artist .item-artist .img-artist {
+         width: 150px;
+         height: 150px;
+     }
+
+     header .song-side .song-artist .item-artist .img-artist-box {
+         width: 150px;
+         height: 150px;
+     }
+
+     header .song-side .controls {
+         gap: 0 30px
+     }
+
+     header .song-side .btn-list-nav {
+         display: block;
+     }
+ }
+
+ /* Mobile < 740px 46.25rem */
+ @media only screen and (max-width: 46.25rem) {}
+
+ /* Tablet  740px < width < 1024px , 46.25rem < width < 63.975rem */
+ @media only screen and (min-width: 46.25rem) and (max-width: 63.975rem) {
+     header {
+         position: relative;
+     }
+
+     header .menu-side {
+         display: none;
+         transform: translateX(100px);
+         animation: menuNav 2s;
+     }
+
+     header .menu-side.active {
+         display:  block;
+         position: absolute;
+         left: -100px;
+         top: 0;
+         height: 100%;
+         width: 20%;
+         z-index: 2;
+         background-color: var(--ul-nav);
+     }
+
+     header .menu-side.active.close {
+         display: none;
+     }
+
+     header .menu-side.active .item-nav {
+         margin: 0 auto
+     }
+
+     header .song-side {
+         width: 100%;
+     }
+ }
