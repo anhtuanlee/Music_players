@@ -1,13 +1,14 @@
 header {
-    position: relative
 }
 
 header #music {
     height: 33rem;
-    flex: 2
+    flex: 2;
+    position: relative;
 }
 .song-container {
     display: flex;
+    height: 100%;
 }
 .song-container .playlist {
     flex:2
@@ -23,15 +24,19 @@ header .song-container .music-ui .music-thumb {
 header .song-container .music-ui .music-thumb img {
     border-radius: 10px;
 }
+.model-playlist-song.active {
+    padding-top: 110px
+}
 #controls {
     position: absolute;
     width: 100%;
+    left: 0;
     bottom: 0px;
     display: flex;
     flex-direction: column;
     background-color: var(--player-background);
     height: 100px;
-
+    z-index: 2222222;
 }
 
 .controls {

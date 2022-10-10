@@ -256,7 +256,6 @@ body {
     flex-direction: column;
     align-items: center;
     border-radius: 10px;
-    overflow-y: scroll;
     animation: loadModelPlaylistOff 1s;
 }
 
@@ -266,7 +265,7 @@ body {
     animation: loadModelPlaylistOn 1s;
     transition: 1s linear;
     margin-right: 30px;
-    flex: 3;
+    flex: 3; 
 }
 
 .model-playlist-song::-webkit-scrollbar {

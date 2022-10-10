@@ -73,6 +73,64 @@
             </div>
 
             <div class="song-container">
+                   <!-- Controls -->
+                   <div id="controls">
+                    <div class="controls">
+                        <div class="controls-button">
+                            <div class="btn btn-repeat">
+                                <i class="fa-solid fa-arrow-rotate-right"></i>
+                            </div>
+                            <div class="btn btn-prev">
+                                <i class="fa-solid fa-backward"></i>
+                            </div>
+                            <div class="btn btn-toggle-play">
+                                <div class="play">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                                <div class="pause">
+                                    <i class="fa-solid fa-circle-pause"></i>
+                                </div>
+                            </div>
+                            <div class="btn btn-next">
+                                <i class="fa-solid fa-forward"></i>
+                            </div>
+                            <div class="btn btn-random">
+                                <i class="fa-solid fa-shuffle"></i>
+                            </div>
+                        </div>
+                        <!-- input range -->
+                        <div class="control-range">
+                            <div class="input-range">
+                                <input type="range" step="1" min="0" max="100" id="range" class="range" value="0">
+
+                                <div class="btn-volumn">
+
+                                    <div class="btn-vol-on">
+                                        <i class="fa-solid fa-volume-off"></i>
+
+                                    </div>
+                                    <div class="btn-vol-off">
+                                        <i class="fa-solid fa-volume-xmark"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <audio id="audio" src="./music/mp_demtienvechome.mp3"></audio>
+                        <!-- timer -->
+                        <div class="timer">
+                            <div class="duration">
+                                00:00
+                            </div>
+
+                            <div class="remainting">
+                                00:00
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
                 <div id="music">
                     <span class="selection-title">
 
@@ -97,7 +155,7 @@
                     </div>
                 </div>
                 <!-- Playlist -->
-                <div class="model-playlist-song active">
+                <div class="model-playlist-song active"> 
                     <div class="playlist-song">
                         <img class="playlist-img" src="/artist/artist-denvau.jpg" alt="" srcset="">
 
@@ -127,63 +185,6 @@
             </div>
         </div>
 
-        <!-- Controls -->
-        <div id="controls">
-            <div class="controls">
-                <div class="controls-button">
-                    <div class="btn btn-repeat">
-                        <i class="fa-solid fa-arrow-rotate-right"></i>
-                    </div>
-                    <div class="btn btn-prev">
-                        <i class="fa-solid fa-backward"></i>
-                    </div>
-                    <div class="btn btn-toggle-play">
-                        <div class="play">
-                            <i class="fa-solid fa-play"></i>
-                        </div>
-                        <div class="pause">
-                            <i class="fa-solid fa-circle-pause"></i>
-                        </div>
-                    </div>
-                    <div class="btn btn-next">
-                        <i class="fa-solid fa-forward"></i>
-                    </div>
-                    <div class="btn btn-random">
-                        <i class="fa-solid fa-shuffle"></i>
-                    </div>
-                </div>
-                <!-- input range -->
-                <div class="control-range">
-                    <div class="input-range">
-                        <input type="range" step="1" min="0" max="100" id="range" class="range" value="0">
-
-                        <div class="btn-volumn">
-
-                            <div class="btn-vol-on">
-                                <i class="fa-solid fa-volume-off"></i>
-
-                            </div>
-                            <div class="btn-vol-off">
-                                <i class="fa-solid fa-volume-xmark"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <audio id="audio" src="./music/mp_demtienvechome.mp3"></audio>
-                <!-- timer -->
-                <div class="timer">
-                    <div class="duration">
-                        00:00
-                    </div>
-
-                    <div class="remainting">
-                        00:00
-                    </div>
-                </div>
-
-            </div>
-        </div>
 
 
         </progress>
