@@ -54,7 +54,7 @@
 
       header .controls .controls-button {
           /* controls on file artist */
-          gap: 0 30px
+          gap: 0 50px
       }
 
       header .song-side .song-artist .item-artist .img-artist-box {
@@ -90,7 +90,12 @@
           margin-top: 30px
       }
 
-
+      header #controls {
+          position: unset
+      }
+      header .controls .timer {
+        bottom: -40px;
+      }
   }
 
   /* Tablet  740px < width < 1024px , 46.25rem < width < 63.975rem */

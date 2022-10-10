@@ -133,7 +133,8 @@ header .song-side .song-nav {
 
 header .song-side .selection-title h2 {
     margin-left: 40px;
-    font-size: 20px;
+    font-size: 25px;
+    text-align: center;
     margin-top: 20px;
     color: var(--color-white);
 

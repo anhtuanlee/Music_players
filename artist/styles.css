@@ -34,6 +34,9 @@ header .song-container .music-ui .music-thumb img {
     flex-direction: column;
     background-color: var(--player-background);
     height: 100px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
     z-index: 2222222;
 }
 
@@ -60,7 +63,7 @@ header .song-container .music-ui .music-thumb img {
 
 .controls .timer {
     position: absolute;
-    bottom: -38px;
+    bottom: -15px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;

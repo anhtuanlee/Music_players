@@ -62,7 +62,13 @@ const app = {
             img: './artist/artist-mono.jpg',
             content: 'Ngẫu hứng cùng MOMO........',
             id: 4
-        }
+        },
+        {
+            singer: 'Châu Khải Phong',
+            img: 'artist/artist-chaukhaiphong.jpg',
+            content: '"Khóc" cùng Châu Khải Phong',
+            id: 5
+        },
     ],
 
     songs: [
@@ -117,7 +123,7 @@ const app = {
             name: 'WaitingForYou',
             singer: 'MoNo',
             img: 'img/img_waitingforyou.jpg',
-            path: 'music/mp_waitingforyou.mp3' ,
+            path: 'music/mp_waitingforyou.mp3',
             id_singer: 4
         },
         {
@@ -187,8 +193,38 @@ const app = {
             img: './img/img_xuatgia.jpg',
             path: './music/mp_xuatgia.mp3',
             id_singer: 2
-        }
-
+         } ,
+         {
+            name: 'Ân Tình Sang Trang',
+            singer: 'Châu Khải Phong',
+            img: './img/img_antinhsangtrang.jpg',
+            path: './music/mp_antinhsangtrang.mp3',
+            id_singer: 5
+         } ,   {
+            name: 'Áo Cũ Tình Mới',
+            singer: 'Châu Khải Phong',
+            img: './img/img_aocutinhmoi.jpg',
+            path: './music/mp_aocutinhmoi.mp3',
+            id_singer: 5
+         } ,   {
+            name: 'Chuỗi Ngày Vắng Em',
+            singer: 'Châu Khải Phong',
+            img: './img/img_chuoingayvangem.jpg',
+            path: './music/mp_chuoingayvangem.mp3',
+            id_singer: 5
+         } ,   {
+            name: 'Nếu Ta Ngược Lối',
+            singer: 'Châu Khải Phong',
+            img: './img/img_neutanguocloi.jpg',
+            path: './music/mp_neutanguocloi.mp3',
+            id_singer: 5
+         } ,   {
+            name: 'Thương Em',
+            singer: 'Châu Khải Phong',
+            img: './img/img_thuongem.jpg',
+            path: './music/mp_thuongem.mp3',
+            id_singer: 5
+         } ,
     ],
     handleSong: function () {
         const _this = this
@@ -484,6 +520,7 @@ const app = {
                 slidesToShow: 4,
                 slidesToScroll: 2,
                 cssEase: 'linear',
+                draggable: false,
                 arrow: true,
                 arrows: true,
                 prevArrow: "<button type='button' class='slick-prev slick-button'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
@@ -497,7 +534,7 @@ const app = {
                             slidesToScroll: 2,
                             cssEase: 'linear',
                             arrows: true,
-                            draggable: true,
+                            draggable: false,
                         }
                     },
                     {
@@ -519,7 +556,7 @@ const app = {
                             cssEase: 'linear',
                             draggable: true,
                             centerMode: true,
-                            centerPadding: '100px', 
+                            centerPadding: '100px',
                         }
                     },
                     {
