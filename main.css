@@ -266,7 +266,7 @@ body {
     animation: loadModelPlaylistOn 1s;
     transition: 1s linear;
     margin-right: 30px;
-    flex-shrink: 0;
+    flex: 3;
 }
 
 .model-playlist-song::-webkit-scrollbar {
