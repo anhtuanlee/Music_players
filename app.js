@@ -346,9 +346,9 @@ const app = {
 
         }
         // Xu li click vao body se close menu-nav 
-        I('.container').onclick = function (e) { 
+        I('.container').onclick = function (e) {
             menuNav.classList.remove('active')
-            menuNav.classList.add('close') 
+            menuNav.classList.add('close')
         }
     },
 
@@ -489,14 +489,14 @@ const app = {
                 nextArrow: "<button type='button' class='slick-next slick-button'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
                 responsive: [
                     {
-                        breakpoint: 1181,
+                        breakpoint: 1251,
                         settings: {
                             infinite: false,
                             slidesToShow: 3,
                             slidesToScroll: 2,
                             cssEase: 'linear',
                             arrows: true,
-                            draggable: true
+                            draggable: true,
                         }
                     },
                     {
@@ -504,17 +504,32 @@ const app = {
                         settings: {
                             slidesToShow: 2,
                             slidesToScroll: 2,
-                            arrow: false,
+                            arrows: true,
                             cssEase: 'linear',
-                            draggable: true
+                            draggable: true,
 
+                        }
+                    }, {
+                        breakpoint: 740,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            arrows: false,
+                            cssEase: 'linear',
+                            draggable: true,
+                            centerMode: true,
+                            centerPadding: '100px', 
                         }
                     },
                     {
-                        breakpoint: 480,
+                        breakpoint: 600,
                         settings: {
                             slidesToShow: 1,
-                            slidesToScroll: 1
+                            slidesToScroll: 1,
+                            arrows: false,
+                            cssEase: 'linear',
+                            draggable: true,
+                            centerPadding: '50px',
                         }
                     }
                 ]
