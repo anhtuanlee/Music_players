@@ -107,7 +107,7 @@ function renderlistSong() {
                }
             }
 
-            let index = songNode.getAttribute('data-index') || Number(songNode.dataset.index)
+            currentIndex = songNode.getAttribute('data-index') || Number(songNode.dataset.index)
             // Những thằng index được lấy ra bằng data-index chứa trong playlists 
             console.log(index)
             console.log(playlists[index])
@@ -224,10 +224,8 @@ function handleSong() {
 
       if (audio.duration) {
          inputRange.value = newTime
-         I('.duration').textContent = `${minutes < 10 ? '0' + minutes : minutes} :
-              ${seconds < 10 ? '0' + seconds : seconds}`
-         I('.remainting').textContent = `${minutesCurrent < 10 ? '0' + minutesCurrent : minutesCurrent} :
-               ${secondsCurrent < 10 ? '0' + secondsCurrent : secondsCurrent}`
+         I('.duration').textContent = `${minutes < 10 ? '0' + minutes : minutes} :${seconds < 10 ? '0' + seconds : seconds}`
+         I('.remainting').textContent = `${minutesCurrent < 10 ? '0' + minutesCurrent : minutesCurrent} :  ${secondsCurrent < 10 ? '0' + secondsCurrent : secondsCurrent}`
       }
       else {
          inputRange.value = 0
