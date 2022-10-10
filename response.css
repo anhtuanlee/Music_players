@@ -32,7 +32,7 @@
     header .menu-side {
         display: none;
         transform: translateX(100px);
-        animation: menuNav 2s;
+        animation: menuNav 1s;
     }
 
     header .menu-side.active {
@@ -41,18 +41,18 @@
         left: -100px;
         top: 0;
         height: 100%;
-        width: 25%;
+        width: 30%;
         z-index: 2;
         background-color: var(--ul-nav);
     }
 
+    header .menu-side.active .item-nav h3 {
+        margin: 0 30px
+    }
     header .menu-side.active.close {
         display: none;
     }
 
-    header .menu-side.active .item-nav {
-        margin: 0 auto
-    }
 
     header .song-side {
         width: 100%;
@@ -98,14 +98,14 @@
         gap: 0 30px
      } 
      header .song-side .song-artist .item-artist .img-artist-box {
-         width: 300px;
-         height: 300px;
+         width: 250px;
+         height: 250px;
      }
 
      header .menu-side {
          display: none;
          transform: translateX(100px);
-         animation: menuNav 2s;
+         animation: menuNav 1s;
      }
 
      header .menu-side.active {
@@ -115,7 +115,7 @@
          top: 0;
          height: 100%;
          width: 35%;
-         z-index: 2;
+         z-index: 22222;
          background-color: var(--ul-nav);
      }
 
