@@ -117,7 +117,8 @@ const app = {
             name: 'WaitingForYou',
             singer: 'MoNo',
             img: 'img/img_waitingforyou.jpg',
-            path: 'music/mp_waitingforyou.mp3'
+            path: 'music/mp_waitingforyou.mp3' ,
+            id_singer: 4
         },
         {
             name: 'Bài này chill phết !!!',

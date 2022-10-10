@@ -4,7 +4,7 @@ header {
 
 header #music {
     height: 33rem;
-    flex: 0
+    flex: 2
 }
 .song-container {
     display: flex;
