@@ -19,11 +19,14 @@ const btnRandom = I('.btn-random')
 const btnRepeat = I('.btn-repeat')
 const btnNext = I('.btn-next')
 const btnPrev = I('.btn-prev')
-const playlistModel = I('.playlist')
+const playlistModel = I('.model-playlist-song')
 const playlistSong = I('.playlist-song')
 const allDuration = II('.time-duration')
 const itemMenu = II('.menu-nav  li')
 const menuSong = I('.music')
+const btnListNav = I('.btn-list-nav')
+const menuNav = I('.menu-side')
+const closeMenu = I('.btn-close-menu')
 const setIndex = new Set()
 let playlists = songs.filter((song) => {
    if (artistIndex >= 0) {
@@ -36,16 +39,15 @@ let playlists = songs.filter((song) => {
 
 // render thumb
 function loadingSong(index) {
-   thumb.src = arTist[currentIndex].img
-   nameSong.textContent = arTist[currentIndex].content
-   singer.textContent = arTist[currentIndex].singer
+   thumb.src = arTist[artistIndex].img
+   nameSong.textContent = arTist[artistIndex].content
+   singer.textContent = arTist[artistIndex].singer
    if (I('.playlist-song:not(active)')) { // Khi chua click vao playlist thi mặc định nó sẽ phát bài đầu tiên trong danh sách  
       audio.src = playlists[0].path
       console.log(audio.src)
    }
    else if (I('.playlist-song.active')) {
       confirm('saime r')
-      audio.src = playlists[index].path
 
    }
 }
@@ -141,7 +143,7 @@ function renderDuration() {
 
 }
 
-let currentIndex = artistIndex
+let currentIndex = 0
 let isPlaying = false;
 let isRandom = false;
 let isRepeat = false;
@@ -310,6 +312,23 @@ function handleSong() {
          audio.muted = true  // Khi vol on audio muted
       }
    }
+   // Xu li btn-list-nav 
+   btnListNav.onclick = function () {
+      menuNav.classList.add('active')
+      menuNav.classList.remove('close')
+
+   }
+   //Xu li khi click vao close off menu-nav
+   closeMenu.onclick = function () {
+      menuNav.classList.add('close')
+      menuNav.classList.remove('active')
+
+   }
+   // Xu li click vao body se close menu-nav 
+   I('.song-container').onclick = function (e) {
+      menuNav.classList.remove('active')
+      menuNav.classList.add('close')
+   }
 
    // Xu li khi click vao item-nav 
    II('.item-nav').forEach((item, index) => {
@@ -319,6 +338,7 @@ function handleSong() {
          item.classList.add('active')
       }
    })
+
 
 }
 function playSong() {

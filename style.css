@@ -131,17 +131,12 @@ header .song-side .song-nav {
 }
 
 header .song-side .selection-title h2 {
-    text-align: center;
     margin-left: 40px;
     font-size: 20px;
+    margin-top: 20px;
     color: var(--color-white);
-      
-}
 
-header .song-side .selection-title :first-child {
-    text-align: unset; 
-    margin-top: 40px;
-}
+} 
 
 header .song-side .song-nav #search {
     height: 2rem;
@@ -178,7 +173,7 @@ header .song-side .song-artist .artist-song {
 header .song-side .song-artist .item-artist {
     color: var(--color-white);
     overflow: hidden;
-    margin: 10px 20px; 
+    margin: 10px 20px;
     position: relative;
 }
 

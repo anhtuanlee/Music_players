@@ -73,12 +73,17 @@
          height: 100%;
          width: 100%;
      }
-
+    header .song-container {
+        display: flex;
+        flex-direction: column;
+    }  
      header .song-side {
          width: 100%;
          height: 100%;
+     } 
+     header #music .selection-title {
+        text-align: center;
      }
-
      header .menu-song {
          display: flex;
          flex-direction: column;
@@ -88,6 +93,9 @@
 
      header .song-side .controls {
          gap: 0 50px
+     } 
+     header  .controls .controls-button { /* controls on file artist */
+        gap: 0 30px
      } 
      header .song-side .song-artist .item-artist .img-artist-box {
          width: 300px;
@@ -113,7 +121,7 @@
 
      header #music,
      .model-playlist-song.active {
-         margin: 0 auto;
+         margin: 10px auto;
          width: 95%;
      }
 
