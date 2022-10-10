@@ -1,20 +1,18 @@
-
 header #music {
     height: 33rem;
-    flex: 2;
     position: relative;
+    flex: 3
 }
 
-header .model-playlist-song.active {
-    padding-top: 110px
-}
-.song-container {
+header .song-container {
     display: flex;
     height: 100%;
 }
 
-.song-container .playlist {
-    flex: 2
+header .model-playlist-song {
+    display: flex;
+    flex: 4;
+    padding-top: 20px;
 }
 
 /* Thumb img */
@@ -31,10 +29,7 @@ header .song-container .music-ui .music-thumb img {
 
 
 #controls {
-    position: absolute;
     width: 100%;
-    left: 0;
-    bottom: 0px;
     display: flex;
     flex-direction: column;
     background-color: var(--player-background);
@@ -52,7 +47,7 @@ header .song-container .music-ui .music-thumb img {
 .controls .controls-button {
     display: flex;
     flex-direction: row;
-    gap: 0 60px;
+    gap: 0 50px;
     font-size: 15px;
 }
 
@@ -65,13 +60,13 @@ header .song-container .music-ui .music-thumb img {
 
 .controls .timer {
     position: absolute;
-    bottom: -15px;
+    bottom: -38px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
     color: #999;
     font-size: 14px;
-    width: 400px;
+    min-width: 380px;
 }
 
 .controls .btn-volumn {
