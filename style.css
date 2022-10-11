@@ -138,7 +138,7 @@ header .song-side .selection-title h2 {
     margin-top: 20px;
     color: var(--color-white);
 
-} 
+}
 
 header .song-side .song-nav #search {
     height: 2rem;
@@ -158,6 +158,30 @@ header .song-side .song-nav .icon-search {
 header .song-side .song-nav .icon-search.active {
     background-color: var(--active-color-background);
     color: var(--active-color)
+}
+
+/* slider */
+
+header .song-side .slider-load {
+    margin-top: 30px;
+}
+
+header .song-side .slider-load .slider-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 50px;
+
+}
+
+header .song-side .slider-load .slider-item img {
+    height: 400px;
+    max-width: 100%;
+
+}
+
+header .song-side .slider-load .slick-active {
+    transform: scale;
 }
 
 /* Song artist */

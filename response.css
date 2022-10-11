@@ -58,8 +58,8 @@
       }
 
       header .song-side .song-artist .item-artist .img-artist-box {
-          width: 250px;
-          height: 250px;
+          width: 150px;
+          height: 150px;
       }
 
       header .menu-side {
@@ -96,8 +96,19 @@
       header .controls .timer {
         bottom: -40px;
       }
+      header .song-side .slider-load .slider-item img {
+        height: 280px;
+        max-width: 100%;
+    
+    }
   }
-
+  @media only screen and (max-width: 480px) {
+    
+    header .song-side .slider-load .slider-item img {
+        height: 180px;
+        width: 100%;
+    }
+  }
   /* Tablet  740px < width < 1024px , 46.25rem < width < 63.975rem */
   @media only screen and (min-width: 46.25rem) and (max-width: 63.975rem) {
       header {

@@ -47,7 +47,7 @@ body {
     border-radius: 12px;
     background-color: var(--layout-bg);
     position: relative;
-    flex: 3
+    flex: 2
 }
 
 .music-thumb {

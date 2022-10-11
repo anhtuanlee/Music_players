@@ -193,38 +193,49 @@ const app = {
             img: './img/img_xuatgia.jpg',
             path: './music/mp_xuatgia.mp3',
             id_singer: 2
-         } ,
-         {
+        },
+        {
             name: 'Ân Tình Sang Trang',
             singer: 'Châu Khải Phong',
             img: './img/img_antinhsangtrang.jpg',
             path: './music/mp_antinhsangtrang.mp3',
             id_singer: 5
-         } ,   {
+        }, {
             name: 'Áo Cũ Tình Mới',
             singer: 'Châu Khải Phong',
             img: './img/img_aocutinhmoi.jpg',
             path: './music/mp_aocutinhmoi.mp3',
             id_singer: 5
-         } ,   {
+        }, {
             name: 'Chuỗi Ngày Vắng Em',
             singer: 'Châu Khải Phong',
             img: './img/img_chuoingayvangem.jpg',
             path: './music/mp_chuoingayvangem.mp3',
             id_singer: 5
-         } ,   {
+        }, {
             name: 'Nếu Ta Ngược Lối',
             singer: 'Châu Khải Phong',
             img: './img/img_neutanguocloi.jpg',
             path: './music/mp_neutanguocloi.mp3',
             id_singer: 5
-         } ,   {
+        }, {
             name: 'Thương Em',
             singer: 'Châu Khải Phong',
             img: './img/img_thuongem.jpg',
             path: './music/mp_thuongem.mp3',
             id_singer: 5
-         } ,
+        },
+    ],
+    slider: [
+        {
+            img: './slider/slider-bctm.jpg'
+        },
+        {
+            img: './slider/slider-chaukhaiphong.jpg'
+        },
+        {
+            img: './slider/slider-denvau.jpg'
+        },
     ],
     handleSong: function () {
         const _this = this
@@ -506,73 +517,96 @@ const app = {
         })
         I('.song-artist').innerHTML = htmls.join('')
     },
-    slickSliderArtist: function () {
-        $('.item-artist').on('click', function (e) {
-            const index = $(this).attr("data-slick-index");
-            console.log(index)
-            localStorage.setItem('index', index)
-            location.href = 'artist.html'
+    renderSlider: function () {
+        let htmls = this.slider.map((slider) => {
+            return ` 
+                <figure class="slider-item">
+                    <img src="./${slider.img}" alt="" class="slider-item-img">
+                </figure>`
+        })
+        I('.slider-load').innerHTML = htmls.join('')
+    },
+    slickSlider: function () {
+        $(document).ready(function () {
+            //slider img 
+            $('.slider-load').slick(
+                {
+                    infinite: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    cssEase: 'linear',
+                    draggable: true,
+                    autoplay: true,
+                    autoplayTime: 1000,
+                    arrows: false
+                }
+            )
+            // slider artist
+            $('.item-artist').on('click', function (e) {
+                const index = $(this).attr("data-slick-index");
+                console.log(index)
+                localStorage.setItem('index', index)
+                location.href = 'artist.html'
 
+            });
+            $('.song-artist').slick(
+                {
+                    infinite: false,
+                    slidesToShow: 4,
+                    slidesToScroll: 2,
+                    cssEase: 'linear',
+                    draggable: false,
+                    arrow: true,
+                    arrows: true,
+                    prevArrow: "<button type='button' class='slick-prev slick-button'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+                    nextArrow: "<button type='button' class='slick-next slick-button'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+                    responsive: [
+                        {
+                            breakpoint: 1251,
+                            settings: {
+                                infinite: false,
+                                slidesToShow: 3,
+                                slidesToScroll: 2,
+                                cssEase: 'linear',
+                                arrows: true,
+                                draggable: false,
+                            }
+                        },
+                        {
+                            breakpoint: 820,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 2,
+                                arrows: true,
+                                cssEase: 'linear',
+                                draggable: true,
+
+                            }
+                        }, {
+                            breakpoint: 740,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 1,
+                                arrows: false,
+                                cssEase: 'linear',
+                                draggable: true,
+                            }
+                        },
+                        {
+                            breakpoint: 600,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 1,
+                                arrows: false,
+                                cssEase: 'linear',
+                                draggable: true,
+                                centerPadding: '50px',
+                            }
+                        }
+                    ]
+                }
+            )
         });
-        $('.song-artist').slick(
-            {
-                infinite: false,
-                slidesToShow: 4,
-                slidesToScroll: 2,
-                cssEase: 'linear',
-                draggable: false,
-                arrow: true,
-                arrows: true,
-                prevArrow: "<button type='button' class='slick-prev slick-button'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
-                nextArrow: "<button type='button' class='slick-next slick-button'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
-                responsive: [
-                    {
-                        breakpoint: 1251,
-                        settings: {
-                            infinite: false,
-                            slidesToShow: 3,
-                            slidesToScroll: 2,
-                            cssEase: 'linear',
-                            arrows: true,
-                            draggable: false,
-                        }
-                    },
-                    {
-                        breakpoint: 820,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 2,
-                            arrows: true,
-                            cssEase: 'linear',
-                            draggable: true,
-
-                        }
-                    }, {
-                        breakpoint: 740,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                            arrows: false,
-                            cssEase: 'linear',
-                            draggable: true,
-                            centerMode: true,
-                            centerPadding: '100px',
-                        }
-                    },
-                    {
-                        breakpoint: 600,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                            arrows: false,
-                            cssEase: 'linear',
-                            draggable: true,
-                            centerPadding: '50px',
-                        }
-                    }
-                ]
-            }
-        )
     },
     defineProperty: function () {
         Object.defineProperty(this, 'currentSong', {
@@ -619,9 +653,9 @@ const app = {
         this.handleSong()
         this.renderlistSong()
         this.renderArtist()
-        this.slickSliderArtist()
+        this.slickSlider()
         this.scollInterView()
-
+        this.renderSlider()
     }
 
 }
