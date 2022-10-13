@@ -336,7 +336,10 @@ function handleSong() {
          item.classList.add('active')
       }
    })
-
+   //Xu li logo back
+   I('#logo').onclick = function (e) {
+      location.href = './index.html'
+   }
 
 }
 function playSong() {

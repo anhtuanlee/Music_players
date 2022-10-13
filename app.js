@@ -398,8 +398,11 @@ const app = {
             menuNav.classList.remove('active')
             menuNav.classList.add('close')
         }
+        //Xu li logo back
+        I('#logo').onclick = function(e) {
+            location.href = './index.html'
+        }
     },
-
     nextSong: function () {
         if (this.currentIndex == this.songs.length - 1) {
             this.currentIndex = 0
