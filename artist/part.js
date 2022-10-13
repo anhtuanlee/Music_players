@@ -389,3 +389,6 @@ loadingSong()
 renderDuration()
 
 
+const a = {
+   name:'anhtuan'}
+   a['z']
