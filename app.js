@@ -224,7 +224,13 @@ const app = {
             img: './img/img_thuongem.jpg',
             path: './music/mp_thuongem.mp3',
             id_singer: 5
-        },
+        }, {
+            name: 'Mơ',
+            singer: 'Đen Vâu',
+            img: './img/img_mo.jpg',
+            path: './music/mp_mo.mp3',
+            id_singer: 0
+        }
     ],
     slider: [
         {
@@ -399,7 +405,7 @@ const app = {
             menuNav.classList.add('close')
         }
         //Xu li logo back
-        I('#logo').onclick = function(e) {
+        I('#logo').onclick = function (e) {
             location.href = './index.html'
         }
     },
